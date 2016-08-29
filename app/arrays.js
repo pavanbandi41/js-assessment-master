@@ -1,0 +1,135 @@
+exports = typeof window === 'undefined' ? global : window;
+
+exports.arraysAnswers = {
+  indexOf: function(arr, item) {
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] === item) {
+        return i;
+      }
+    }
+
+    return -1;
+
+  },
+
+  sum: function(arr) {
+    var sum = 0;
+
+    for (var i = 0; i < arr.length; i++) {
+      sum += arr[i];
+    }
+
+    return sum;
+
+  },
+
+  remove: function(arr, item) {
+    var resultArray = [];
+
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] !== item) {
+        resultArray.push(arr[i]);
+      }
+    }
+
+    return resultArray;
+
+  },
+
+  removeWithoutCopy: function(arr, item) {
+    var i;
+    var l = arr.length;
+
+    for (i = 0; i < arr.length; i++) {
+      if (arr[i] === item) {
+        arr.splice(i, 1);
+        i--;
+        l--;
+      }
+    }
+
+    return arr;
+
+  },
+
+  append: function(arr, item) {
+    arr.push(item);
+    return arr;
+  },
+
+  truncate: function(arr) {
+    arr.pop();
+    return arr;  
+  },
+
+  prepend: function(arr, item) {
+    arr.unshift(item);
+    return arr;
+
+  },
+
+  curtail: function(arr) {
+    arr.shift(arr);
+    return arr;
+
+  },
+
+  concat: function(arr1, arr2) {
+    return arr1.concat(arr2);
+
+  },
+
+  insert: function(arr, item, index) {
+    arr.splice(index, 0, item);
+    return arr;
+
+  },
+
+  count: function(arr, item) {
+    var count = 0;
+
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] === item) {
+        count++;
+      }
+    }
+
+    return count;
+
+  },
+
+  duplicates: function(arr) {
+    var resultArray=[];
+        for(var i = 0; i < arr.length; i++) {
+        if((arr.lastIndexOf(arr[i]) != i) &&  (resultArray.indexOf(arr[i]) == -1)) {
+            resultArray.push(arr[i]);
+        }
+    }
+    return resultArray;
+
+  },
+
+  square: function(arr) {
+    var resultArray = [];
+
+    for (var i = 0, len = arr.length; i < len; i++) {
+      resultArray.push(arr[i] * arr[i]);
+    }
+
+    return resultArray;
+
+  },
+
+  findAllOccurrences: function(arr, target) {
+    var resultArray = [];
+
+    for (var i = 0, len = arr.length; i < len; i++) {
+      if (arr[i] === target) {
+        resultArray.push(i);
+      }
+    }
+
+    return resultArray;
+
+  }
+};
